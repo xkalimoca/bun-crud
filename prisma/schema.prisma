@@ -12,3 +12,10 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Post {
+  id      Int    @id @default(autoincrement())
+  title   String
+  path    String @unique
+  content String
+}
